@@ -1,26 +1,22 @@
 import javax.swing.*;
-import org.jdesktop.swingx.autocomplete.AutoCompleteDecorator;
 import java.awt.*;
 public class Demo {
 
-    JFrame frame = new JFrame("");
-    AutoCompleteDecorator decorator;
-    JComboBox combobox;
+    JFrame frame = new JFrame("Barra de pesquisa");
+
     public Demo() {
-        combobox = new JComboBox(new Object[]{"","Ester", "Jordi",
-                "Jordina", "Jorge", "Sergi"});
-        AutoCompleteDecorator.decorate(combobox);
+
         frame.setSize(400,400);
         frame.setLocationRelativeTo(null);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.setLayout(new FlowLayout());
 
-        frame.add(combobox);
+        frame.add(new JTextField(20));
         frame.setVisible(true);
     }
 
     public static void main(String[] args) {
-        Demo d = new Demo();
+        new Demo();
     }
 }
 
