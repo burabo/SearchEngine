@@ -4,9 +4,7 @@ import java.awt.*;
 public class SearchBar extends Thread {
 
     String sharedString;
-
     JFrame frame = new JFrame("Barra de pesquisa");
-
     @Override
     public void run() {
 
@@ -19,9 +17,11 @@ public class SearchBar extends Thread {
 
         frame.add(text);
         frame.setVisible(true);
-
         sharedString = text.getText();
     }
 
-
+    public static void main(String[] args) {
+        SearchBar a = new SearchBar();
+        a.start();
+    }
 }
