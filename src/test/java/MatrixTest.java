@@ -6,6 +6,12 @@ import org.junit.jupiter.api.TestInstance;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 public class MatrixTest {
 
+
+    /*
+    É NECESSARIO FAZER TESTES DIREITINHOS!!!!!
+
+     */
+
     Matrix idmat = new Matrix(3, 3);
     Matrix randomMat = new Matrix(3,3);
 
@@ -20,14 +26,7 @@ public class MatrixTest {
                 randomMat.matrix[i][j]=i+1;
             }
         }
-
-
     }
-
-
-
-
-
 
     @Test
     void testMult(){
@@ -35,6 +34,8 @@ public class MatrixTest {
         System.out.print(randomMat.toString());
         randomMat = idmat.multiplyBy(randomMat);
         System.out.print(randomMat.toString());
+        System.out.print(idmat.toString());
+        idmat = idmat.multiplyBy(3);
         System.out.print(idmat.toString());
 
     }
