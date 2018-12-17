@@ -15,6 +15,11 @@ public class Matrix {
 
 
     Matrix multiplyBy(Matrix otherMatrix){
+
+        if(getColumns()!=otherMatrix.getLines()){
+            throw new UnsupportedOperationException();
+        }
+
         Matrix product = new Matrix(getColumns(),otherMatrix.getLines());
 
         for(int i = 0; i < getLines(); i++) {
@@ -31,12 +36,14 @@ public class Matrix {
         String string = "";
 
         for(int i = 0; i<getLines(); i++){
-            string += "\n";
             for (int j = 0; j < getColumns(); j++){
                 string+= matrix[i][j];
                 string+="\t";
             }
+            string += "\n";
         }
+
+        string+="\n";
         return string;
     }
 
