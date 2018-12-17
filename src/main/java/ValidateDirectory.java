@@ -8,18 +8,17 @@ File file;
         this.file =  novoFile;
     }
 
-
-
     public void validateDirectory(){
         if(this.file.exists()){
-            System.out.println("A pasta que pretende encontrar existe !");
+            System.out.println("O directório que pretende encontrar existe.");
+            numberFileInDirectory();
         }else{
-            System.out.println("A pasta que pretende encontrar não existe !");
+            System.out.println("O directório que pretende encontrar não existe. Certifique-se que introduziu o caminho correcto.");
         }
     }
 
-    public void numberFileInDirectory(){
-        System.out.println("Existem " + this.file.list().length + " dentro do repositorio");
+    private void numberFileInDirectory(){
+        System.out.println("Existem " + this.file.list().length + " ficheiros dentro do directório");
     }
 
 }

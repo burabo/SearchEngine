@@ -7,12 +7,11 @@ public class SearchEngine {
         /**
          * Indicar o caminho para a respetiva pasta
          */
-        File pasta = new File("C:\\Users\\Paulo\\Desktop\\ESTG");
+        File directory = new File("../../../Documents/Faculdade/ESII/Trabalho Prático 2/Ficheiros");
 
-        ValidateDirectory directory = new ValidateDirectory(pasta);
+        ValidateDirectory validateDirectory = new ValidateDirectory(directory);
 
-        directory.validateDirectory();
-        directory.numberFileInDirectory();
+        validateDirectory.validateDirectory();
     }
 
 }
