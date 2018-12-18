@@ -18,6 +18,11 @@ public class SearchUtils {
         return list;
     }
 
+
+    /**
+     * @param words {@link List} de palavras.
+     * @return Lista de pares de palavras assim como a sua frequencia na lista anterior
+     */
     public static List<Pair> countWords(List<String> words){
 
         List<Pair> listOfCountedWords = new ArrayList<>();
@@ -40,8 +45,10 @@ public class SearchUtils {
 
     }
 
-    public static void removeDigits(String first_path, String second_path) {
 
+
+    public static void removeDigits(String first_path, String second_path) {
+        //É PRECISO QUE FIQUE UM ESPACO ONDE ANTES HAVIA UMA PONTUACAO OU DIGITO!!!!
         File file = new File(first_path);
         Scanner scanner = null;
         try {
