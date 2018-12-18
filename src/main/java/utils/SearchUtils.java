@@ -7,6 +7,7 @@ public class SearchUtils {
 
     public static List<String> getWordList(File file) throws IOException {
         FileReader input = new FileReader(file);
+
         BufferedReader bufRead = new BufferedReader(input);
         String myLine;
         ArrayList<String> list = new ArrayList<>();
@@ -45,7 +46,6 @@ public class SearchUtils {
     }
 
     public static void removeDigits(String first_path, String second_path) {
-        //É PRECISO QUE FIQUE UM ESPACO ONDE ANTES HAVIA UMA PONTUACAO OU DIGITO!!!!
         File file = new File(first_path);
         Scanner scanner = null;
         try {
@@ -53,6 +53,8 @@ public class SearchUtils {
         } catch (
                 FileNotFoundException e) {
             e.printStackTrace();
+        }finally {
+            scanner.close();
         }
         PrintWriter writer = null;
         try {
@@ -61,12 +63,9 @@ public class SearchUtils {
             e.printStackTrace();
         }
 
-
         while (scanner.hasNextLine()) {
             String line = scanner.nextLine();
-
             String newLine = "";
-
             for (int i = 0; i < line.length(); i++) {
                 if (line.charAt(i) < 33 || line.charAt(i) > 90) {
                     newLine += line.charAt(i);

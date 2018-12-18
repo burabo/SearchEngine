@@ -1,8 +1,31 @@
+import javax.activation.UnsupportedDataTypeException;
+
 public class Matrix {
     public int[][] matrix;
 
     public Matrix(int lines, int column) {
+        if (lines<0 || column <0){
+            throw new UnsupportedOperationException();
+        }
         matrix = new int[lines][column];
+    }
+
+    public Matrix(int[][] data) throws UnsupportedDataTypeException {
+        matrix = new int[data.length][data[0].length];
+        int i = 0;
+        for (int[] lin:
+        data){
+            if(lin.length != data[0].length){
+                throw new UnsupportedDataTypeException();
+            }
+            int j = 0;
+            for (int col:
+            lin){
+                matrix[i][j] = col;
+                j++;
+            }
+            i++;
+        }
     }
 
     int getLines(){
