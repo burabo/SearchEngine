@@ -68,9 +68,18 @@ public class SearchUtils {
             String newLine = "";
 
             for (int i = 0; i < line.length(); i++) {
-                if (line.charAt(i) < 48 || line.charAt(i) > 57) {
+                if (line.charAt(i) < 33 || line.charAt(i) > 90) {
                     newLine += line.charAt(i);
+                }else {
+                    newLine += " ";
                 }
+                if (line.charAt(i) >= 65 && line.charAt(i) <= 90){
+                    int j = line.charAt(i);
+                    j += 32;
+                    char k = (char) j;
+                    newLine += k;
+                }
+
             }
             writer.write(newLine);
         }
