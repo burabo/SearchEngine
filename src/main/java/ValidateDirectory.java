@@ -16,9 +16,7 @@ File file;
             System.out.println("O directório que pretende encontrar não existe. Certifique-se que introduziu o caminho correcto.");
         }
     }
-
     private void numberFileInDirectory(){
         System.out.println("Existem " + this.file.list().length + " ficheiros dentro do directório");
     }
-
 }
