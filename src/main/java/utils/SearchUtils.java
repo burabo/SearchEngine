@@ -42,10 +42,7 @@ public class SearchUtils {
             }
         }
         return listOfCountedWords;
-
     }
-
-
 
     public static void removeDigits(String first_path, String second_path) {
         //É PRECISO QUE FIQUE UM ESPACO ONDE ANTES HAVIA UMA PONTUACAO OU DIGITO!!!!
